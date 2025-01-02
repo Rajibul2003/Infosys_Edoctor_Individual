@@ -1,0 +1,74 @@
+@startuml
+start
+
+partition "Patient" {
+    :Register;
+    if (Is registration successful?) then (Yes)
+        :Save details in User and Patient entities;
+    else (No)
+        :Show error message;
+        stop
+    endif
+
+    :Login;
+    if (Is login successful?) then (Yes)
+        :Proceed to Patient Dashboard;
+    else (No)
+        :Show error message;
+        stop
+    endif
+
+    :Search for Doctor;
+    :View Doctor's availability;
+    if (Is Doctor available?) then (Yes)
+        :Book Appointment;
+        :Save Appointment details;
+        :Notify Doctor;
+    else (No)
+        :Show "Doctor not available" message;
+    endif
+}
+
+partition "Doctor" {
+    :Login;
+    if (Is login successful?) then (Yes)
+        :Proceed to Doctor Dashboard;
+    else (No)
+        :Show error message;
+        stop
+    endif
+
+    :View Appointments;
+    :Confirm or Cancel Appointment;
+    if (Doctor confirms?) then (Yes)
+        :Update Appointment status to Confirmed;
+        :Notify Patient;
+    else (No)
+        :Update Appointment status to Cancelled;
+        :Notify Patient;
+    endif
+
+    :Provide Feedback on Patients (optional);
+}
+
+partition "Admin" {
+    :Login;
+    if (Is login successful?) then (Yes)
+        :Proceed to Admin Dashboard;
+    else (No)
+        :Show error message;
+        stop
+    endif
+
+    :Manage Doctors;
+    :Manage Appointments;
+    :View Feedback;
+}
+
+:Patient attends Appointment;
+:Mark Appointment as completed;
+
+:Patient provides Feedback;
+:Save Feedback in Feedback entity;
+stop
+@enduml
