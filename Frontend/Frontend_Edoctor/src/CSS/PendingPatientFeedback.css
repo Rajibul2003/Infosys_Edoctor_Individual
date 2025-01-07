@@ -1,0 +1,157 @@
+/* Body Styling */
+.pending-patient-feedback {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #2c3e50, #3498db);
+  color: #333;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Container for the content */
+.pending-patient-feedback-container {
+  width: 95%;
+  max-width: 1200px;
+  padding: 20px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeIn 1s ease-in-out; /* Subtle fade-in animation */
+}
+
+/* Heading Styling */
+.pending-patient-feedback-container h2 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styling */
+.pending-patient-feedback-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 1rem;
+  text-align: left;
+  border-radius: 8px;
+  table-layout: auto;
+}
+
+.pending-patient-feedback-container table thead {
+  background: #2c3e50;
+  color: white;
+}
+
+.pending-patient-feedback-container table th {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  background-color: rgb(30, 128, 0);
+}
+
+.pending-patient-feedback-container table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.pending-patient-feedback-container table tbody tr:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+.pending-patient-feedback-container table tbody tr:nth-child(even) {
+  background: #ecf0f1;
+}
+
+.pending-patient-feedback-container table tbody tr:hover {
+  background: #d6f8f0;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.pending-patient-feedback-container table td input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.pending-patient-feedback-container table td button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #249a34;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.pending-patient-feedback-container table td button:hover {
+  background-color: #249a34;
+  transform: scale(1.05); /* Slightly enlarges the button on hover */
+}
+
+.pending-patient-feedback-container table td button:disabled {
+  background-color: #7f8c8d;
+  cursor: not-allowed;
+}
+
+.pending-patient-feedback-container .error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  padding-left: 5px;
+}
+
+/* Red border for input fields with errors */
+.pending-patient-feedback-container input:invalid {
+  border-color: red;
+}
+
+/* Animation for Fade In */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .pending-patient-feedback-container {
+    padding: 15px;
+  }
+
+  .pending-patient-feedback-container h2 {
+    font-size: 2rem;
+  }
+
+  .pending-patient-feedback-container table th,
+  .pending-patient-feedback-container table td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .pending-patient-feedback-container table td input {
+    font-size: 0.9rem;
+  }
+
+  .pending-patient-feedback-container table td button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}

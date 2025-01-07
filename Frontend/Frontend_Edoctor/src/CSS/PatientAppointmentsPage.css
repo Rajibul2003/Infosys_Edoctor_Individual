@@ -1,0 +1,178 @@
+/* Body Styling */
+body.patient-appointments {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #2c3e50, #3498db);
+  color: #333;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Aligns the table to the top */
+  padding-top: 20px; /* Adds spacing at the top */
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Container for the content */
+.patient-appointments-page {
+  width: 95%;
+  max-width: 1300px;
+  padding: 20px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95); /* Slightly more opaque background */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for elevation */
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 30px; /* Adds spacing at the bottom of the page */
+  overflow-x: auto; /* Allow horizontal scrolling for small screens */
+}
+
+/* Heading Styling */
+.patient-appointments-page h2 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.patient-appointments-page table {
+  width: auto; /* Allow the table to expand based on content */
+  border-collapse: collapse; /* Remove space between cells */
+  margin: 0 auto; /* Center the table */
+  font-size: 1rem; /* Set font size */
+  text-align: left; /* Align text */
+  border-radius: 8px; /* Rounded corners */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  table-layout: auto; /* Allow columns to adjust their width dynamically */
+  word-wrap: break-word; /* Break long text inside cells */
+}
+
+
+/* Apply styles to the <thead> element directly */
+.patient-appointments-page table thead {
+  background: green; /* Set background color for the entire header */
+}
+
+/* Ensure text color for all <th> elements */
+.patient-appointments-page table th {
+  color: white; /* Text color for all table headers */
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  background-color: green;
+}
+
+.patient-appointments-page table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.patient-appointments-page table td span {
+  margin: 12px auto;
+}
+
+.patient-appointments-page table tbody tr:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+.patient-appointments-page table tbody tr:nth-child(even) {
+  background: #ecf0f1;
+}
+
+.patient-appointments-page table tbody tr:hover {
+  background: #d6eaf8;
+  cursor: pointer;
+}
+
+.patient-appointments-page table td button {
+  padding: 12px; /* Padding inside the button */
+  border: 1px solid #ddd; /* Border for buttons */
+  margin: 5px 2px; /* Margin around buttons */
+  white-space: nowrap; /* Prevent the button text from wrapping */
+  display: inline-block; /* Ensure buttons stay inline */
+  overflow: visible; /* Ensure button content is not clipped */
+  text-align: center;
+  width: fit-content;
+}
+
+/* Loading Message */
+.patient-appointments-page p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Confirmation Modal */
+.patient-appointments-page .confirmation-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.patient-appointments-page .modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.patient-appointments-page textarea,
+.patient-appointments-page input[type="text"],
+.patient-appointments-page input[type="datetime-local"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.patient-appointments-page .modal-actions {
+  margin-top: 20px;
+}
+
+.patient-appointments-page .modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  border-radius: 4px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.patient-appointments-page .modal-actions button:disabled {
+  background-color: #7f8c8d;
+}
+
+.patient-appointments-page textarea {
+  resize: vertical;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .patient-appointments-page {
+    padding: 15px;
+  }
+
+  .patient-appointments-page h2 {
+    font-size: 2rem;
+  }
+
+  .patient-appointments-page table th,
+  .patient-appointments-page table td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,240 @@
+/* General Reset */
+body.patient-dashboard {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  width: 100%;
+  background-color: #f4f6f9; /* Slightly lighter gray */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Dashboard Container */
+.patient-dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%; /* Ensure it covers the entire viewport */
+  background: url("/public/images/patient-dashboard.jpg") no-repeat center center;
+  background-size: cover;
+  min-height: 100%;
+  box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+}
+
+/* Header Section */
+.patient-dashboard-container .dashboard-header {
+  background-color: #34495e; /* Darker blue-gray background for a professional look */
+  color: #ecf0f1; /* Light text color for contrast */
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.patient-dashboard-container .dashboard-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #ecf0f1; /* Light text for clarity */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4); /* Stronger shadow for emphasis */
+}
+
+/* Navigation Bar */
+.patient-dashboard-container .dashboard-navbar {
+  background-color: #1e2a47; /* Deep navy blue background for a clean, professional appearance */
+  padding: 18px 0;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.patient-dashboard-container .dashboard-navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.patient-dashboard-container .dashboard-navbar ul li {
+  margin: 0 18px;
+  position: relative;
+}
+
+.patient-dashboard-container .dashboard-navbar ul li a,
+.patient-dashboard-container .dashboard-navbar ul li button {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-weight: bold;
+  padding: 14px 22px;
+  border: none;
+  background-color: transparent;
+  border-radius: 50px;
+  display: inline-block;
+  width: 100%;
+  text-align: center; 
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.patient-dashboard-container .dashboard-navbar ul li a:hover,
+.patient-dashboard-container .dashboard-navbar ul li button:hover {
+  background-color: #1abc9c; /* Subtle green for a smooth contrast on hover */
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.patient-dashboard-container .dashboard-navbar ul li button.logout:hover {
+  background-color: red; /* Red background on hover */
+  color: #fff; /* White text for better contrast */
+  transform: scale(1.05); /* Optional hover effect */
+}
+
+/* Dropdown Menu */
+.patient-dashboard-container .dropdown-menu {
+  display: none; /* Initially hidden */
+  flex-direction: column;
+  position: absolute;
+  top: 100%; /* Align below the list item */
+  left: 0;
+  background-color: #34495e;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  border-radius: 8px;
+  width: 200px; /* Set a fixed width */
+  z-index: 1000;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Add subtle border */
+  opacity: 0; /* Make it invisible initially */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation */
+  transform: translateY(-10px); /* Initially offset */
+}
+
+/* Hovering over a list item */
+.patient-dashboard-container .dashboard-navbar ul li:hover .dropdown-menu {
+  display: flex;
+  opacity: 1; /* Make it visible */
+  transform: translateY(0); /* Animate to its position */
+}
+
+/* Dropdown menu items */
+.patient-dashboard-container .dropdown-menu li {
+  padding: 8px 14px; /* Slightly increased padding for clarity */
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.patient-dashboard-container .dropdown-menu li a {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-weight: bold;
+  display: block;
+  padding: 8px 14px; /* Increased padding for a more spacious look */
+  transition: all 0.3s ease;
+  text-align: left;
+  border-radius: 5px; /* Subtle rounding */
+}
+
+/* Hover effect for menu items */
+.patient-dashboard-container .dropdown-menu li a:hover {
+  background-color: #1abc9c;
+  color: #fff;
+  border-radius: 5px; /* Rounded corners for a sleek effect */
+}
+
+/* For smoother animations, ensuring the menu behaves like the admin one */
+.patient-dashboard-container .dashboard-navbar ul li:hover .dropdown-menu {
+  display: flex;
+  animation: fadeInUp 0.3s ease-in-out; /* Applying fade-in-up animation */
+}
+
+
+/* Main Content Area */
+.patient-dashboard-container .dashboard-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(250,240,230), rgba(217,185,155, 0.7)); /* Maintain gradient */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 50px 30px; /* Increased padding for more space */
+  border-radius: 15px;
+  margin: 20px;
+  color: #2c3e50; /* Changed text color to a dark shade for better readability */
+  font-size: 1.25rem; /* Slightly reduced size for a more balanced look */
+  text-align: center;
+  line-height: 1.75; /* Increased line height for better text clarity */
+  font-family: 'Roboto', sans-serif; /* Modern font for better legibility */
+}
+
+/* Main heading styling */
+.patient-dashboard-container .dashboard-content h2 {
+  font-size: 2.5rem; /* Larger heading size */
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #2c3e50;
+  text-transform: uppercase; /* Capitalize headings for emphasis */
+  letter-spacing: 2px; /* Slight letter spacing for clarity */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Preformatted text */
+.patient-dashboard-container .dashboard-content pre {
+  font-size: 1.2rem; /* Slightly larger for better readability */
+  line-height: 1.75;
+  margin: 20px 0;
+  color: #ecf0f1; /* Softer color for preformatted text */
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgba(0, 0, 0, 0.6); /* Added background color for contrast */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Shadow for better separation */
+}
+
+/* Paragraph text styling */
+.patient-dashboard-container .dashboard-content p {
+  font-size: 1.15rem;
+  color: #454646; /* Softer text color for paragraphs */
+  font-weight: 400;
+  text-align: justify; /* Justified text for better alignment */
+  max-width: 100%; /* Allow text to take full width */
+  line-height: 1.7;
+  white-space: normal; /* Allow text to wrap normally */
+  overflow: visible; /* Ensure overflow is visible */
+  text-overflow: unset; /* Remove ellipsis */
+}
+
+/* Keyframes for fade-in-up effect */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Adjust font sizes and spacing on smaller screens */
+@media (max-width: 768px) {
+  .patient-dashboard-container .dashboard-content {
+    font-size: 1rem; /* Smaller text on mobile */
+    padding: 20px;
+  }
+
+  .patient-dashboard-container .dashboard-content h2 {
+    font-size: 1.8rem; /* Adjust heading size for mobile */
+    margin-bottom: 15px;
+  }
+
+  .patient-dashboard-container .dashboard-content p {
+    font-size: 1rem;
+    margin: 8px 0;
+  }
+
+  .patient-dashboard-container .dashboard-content pre {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}

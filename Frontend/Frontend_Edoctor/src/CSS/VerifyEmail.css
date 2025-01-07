@@ -1,0 +1,66 @@
+body.verify-email-page {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url("/public/images/bg3.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  width: 220vh;
+  overflow: hidden;
+}
+
+.verify-container {
+  max-width: 400px;
+  width: 400px;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(249, 249, 249, 0.7); /* Slight transparency for better contrast */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.verify-container h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #282c34;
+}
+
+.verify-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.verify-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.verify-container .input-error {
+  border-color: red;
+}
+
+.verify-container .error-text {
+  color: red;
+}
+
+.verify-container .btn {
+  padding: 10px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.verify-container .btn:hover {
+  background-color: #218838;
+}

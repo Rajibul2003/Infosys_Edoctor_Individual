@@ -1,0 +1,303 @@
+/* Global Body Styling */
+body.find-doctors {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #2c3e50, #3498db);
+  /* background: url("/public/images/register-bg.jpg") no-repeat center center fixed;
+  background-size: cover; */
+  color: #333;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Main Page Container */
+.find-doctors-page {
+  width: fit-content;
+  max-width: 1200px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  text-align: center;
+  overflow: auto; 
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Heading */
+.find-doctors-page h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* Search Container */
+.find-doctors-page .search-container {
+  margin-bottom: 30px;
+}
+
+/* View All Doctors Section */
+.find-doctors-page .view-all-section {
+  width: 600px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.find-doctors-page .view-all-section button {
+  width: 600px;
+  padding: 10px 15px;
+  background-color: #2c9c6b;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  margin: 20px auto;
+}
+
+.find-doctors-page .view-all-section button:hover {
+  background-color: #27a34f;
+  transform: translateY(-4px);
+}
+
+/* Search By Name Section */
+.find-doctors-page .search-by-name-section {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #ecf0f1;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: 600px;  /* Set width to 600px */
+  margin: 20px auto; /* Center the section */
+}
+
+.find-doctors-page .search-by-name-section input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  transition: border 0.3s ease;
+}
+
+.find-doctors-page .search-by-name-section input:focus {
+  border: 1px solid #2c9c6b;
+}
+
+.find-doctors-page .search-by-name-section button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2c9c6b;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.find-doctors-page .search-by-name-section button:hover {
+  background-color: #27a34f;
+  transform: translateY(-4px);
+}
+
+.find-doctors-page .search-by-name-section .error {
+  color: #e74c3c;
+  font-size: 0.95rem;
+  margin-top: -5px;
+}
+
+/* Search By Specialization Section */
+.find-doctors-page .search-by-specialization-section {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #ecf0f1;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: 600px;  /* Set width to 600px */
+  margin: 20px auto; /* Center the section */
+}
+
+.find-doctors-page .search-by-specialization-section input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  transition: border 0.3s ease;
+}
+
+.find-doctors-page .search-by-specialization-section input:focus {
+  border: 1px solid #2c9c6b;
+}
+
+.find-doctors-page .search-by-specialization-section button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2c9c6b;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.find-doctors-page .search-by-specialization-section button:hover {
+  background-color: #27a34f;
+  transform: translateY(-4px);
+}
+
+.find-doctors-page .search-by-specialization-section .error {
+  color: #e74c3c;
+  font-size: 0.95rem;
+  margin-top: -5px;
+}
+
+/* Doctor Cards Section */
+.find-doctors-page .doctor-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.find-doctors-page .doctor-card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeInCard 0.6s forwards;
+}
+
+.find-doctors-page .doctor-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.find-doctors-page .doctor-card h3 {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.find-doctors-page .doctor-card p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 12px;
+}
+
+.find-doctors-page .doctor-card p strong {
+  font-weight: 700;
+  color: #2980b9;
+}
+
+/* Feedback Stars */
+.find-doctors-page p.feedback-stars {
+  font-size: 1.4rem;
+  color: goldenrod;
+}
+
+/* Reset Search Button */
+.find-doctors-page .reset-search {
+  margin: 30px auto;
+  padding: 12px 20px;
+  background-color: #2c3e50;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.find-doctors-page .reset-search:hover {
+  background-color: #218838;
+  transform: translateY(-4px);
+}
+
+/* Additional Styling for Doctor Details Link */
+.find-doctors-page .doctor-card a button.get-details {
+  width: 100%;
+  padding: 12px;
+  background-color: #2c9c6b;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  text-decoration: none;
+}
+
+.find-doctors-page .doctor-card a button.get-details:hover {
+  background-color: #27a34f;
+  transform: translateY(-4px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .find-doctors-page {
+    padding: 20px;
+  }
+
+  .find-doctors-page .doctor-cards-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .find-doctors-page .doctor-card {
+    width: 100%;
+  }
+
+  .find-doctors-page h2 {
+    font-size: 2rem;
+  }
+
+  .find-doctors-page .search-by-name-section,
+  .find-doctors-page .search-by-specialization-section {
+    width: 100%;  /* Set width to 100% for mobile responsiveness */
+  }
+}

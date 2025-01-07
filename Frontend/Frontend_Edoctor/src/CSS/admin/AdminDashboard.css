@@ -1,0 +1,268 @@
+/* General Reset */
+body.admin-dashboard {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  width: 100%;
+  background-color: #f4f6f9;
+  overflow-x: hidden;
+  color: #2c3e50;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Dashboard Container */
+.admin-dashboard-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background: url("/public/images/admin-dashboard.jpg") no-repeat center center;
+  background-size: cover;
+  box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding-bottom: 50px;
+  animation: slideInUp 1s ease-out;
+}
+
+/* Header Section */
+.admin-dashboard-container .dashboard-header {
+  background-color: #34495e;
+  color: #ecf0f1;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: 0;
+  animation: fadeInDown 1s ease-out;
+}
+
+.admin-dashboard-container .dashboard-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  letter-spacing: 1px;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Navigation Bar */
+.admin-dashboard-container .dashboard-navbar {
+  background-color: #1e2a47;
+  padding: 10px 0;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  animation: fadeInLeft 1s ease-out;
+}
+
+.admin-dashboard-container .dashboard-navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.admin-dashboard-container .dashboard-navbar ul li {
+  margin: 0 20px;
+  position: relative;
+}
+
+.admin-dashboard-container .dashboard-navbar ul li button,
+.admin-dashboard-container .dashboard-navbar ul li a {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-weight: bold;
+  padding: 14px 24px;
+  border: none;
+  background-color: transparent;
+  border-radius: 50px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.admin-dashboard-container .dashboard-navbar ul li button:hover,
+.admin-dashboard-container .dashboard-navbar ul li a:hover {
+  background-color: #1abc9c;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Logout Button Specific Hover */
+.admin-dashboard-container .dashboard-navbar ul li button.logout:hover {
+  background-color: red;
+  color: #fff;
+}
+
+/* Dropdown Menu */
+.admin-dashboard-container .dropdown-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #34495e;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  border-radius: 8px;
+  width: 180px;
+  z-index: 1000;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Add subtle border */
+}
+
+.admin-dashboard-container .dashboard-navbar ul li:hover .dropdown-menu {
+  display: flex;
+}
+
+.admin-dashboard-container .dropdown-menu li {
+  padding: 8px 12px;
+  white-space: nowrap;
+}
+
+.admin-dashboard-container .dropdown-menu li a {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-weight: bold;
+  display: block;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.admin-dashboard-container .dropdown-menu li a:hover {
+  background-color: #1abc9c;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* Main Content Area */
+.admin-dashboard-container .dashboard-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(245, 245, 220, 0.80), rgba(217, 191, 144, 0.80));
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 40px 20px;
+  border-radius: 15px;
+  margin: 20px auto;
+  color: #2c3e50;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 90%;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.admin-dashboard-container .dashboard-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #34495e;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: slideInLeft 1s ease-out;
+}
+
+.admin-dashboard-container .dashboard-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2c3e50; /* Darker text color for better contrast */
+  max-width: fit-content;
+  margin: 0 auto;
+  font-style: italic;
+  text-align: justify;
+  margin-top: 15px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out 0.5s forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .admin-dashboard-container .dashboard-navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-dashboard-container .dashboard-navbar ul li {
+    margin: 10px 0;
+  }
+
+  .admin-dashboard-container .dashboard-content {
+    width: 95%;
+  }
+
+  .admin-dashboard-container .dashboard-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .admin-dashboard-container .dashboard-navbar ul li button,
+  .admin-dashboard-container .dashboard-navbar ul li a {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
